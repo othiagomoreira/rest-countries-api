@@ -1,8 +1,8 @@
 @use '../util' as *;
 
 .header {
-    background-color: var(--light-mode-elements-color);
-    box-shadow: 0 1px 4px rgb(133, 133, 133, 0.3);
+    background-color: var(--elements-color);
+    box-shadow: var(--shadow-primary);
 }
 
 .nav-menu {
@@ -10,15 +10,21 @@
     padding: rem(20) 0;
 
     &__title {
-        font-size: rem(16);
-        color: var(--light-mode-text-color);
+        & a {
+            font-size: rem(16);
+            color: var(--text-color);
+
+            @include breakpoint(medium) {
+                font-size: rem(24);
+            }
+        }
     }
 
     &__theme {
         font-family: inherit;
         font-size: rem(16);
         font-weight: 600;
-        color: var(--light-mode-text-color);
+        color: var(--text-color);
 
         @include flex(initial);
         align-items: center;
@@ -29,6 +35,14 @@
 
         & span {
             font-size: rem(14);
+
+            @include breakpoint(medium) {
+                font-size: rem(16);
+            }
+        }
+
+        @include breakpoint(medium) {
+            font-size: rem(20);
         }
     }
 }
