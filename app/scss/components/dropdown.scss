@@ -1,0 +1,64 @@
+@use '../util' as *;
+
+.dropdown {
+    @include flex(space-between);
+    flex: 1;
+    align-items: center;
+    font-family: inherit;
+    font-weight: 600;
+
+    position: relative;
+    max-width: rem(190);
+    border: none;
+    border-radius: rem(8);
+    padding: rem(16) rem(24);
+    cursor: pointer;
+
+    &,
+    &__list {
+        background-color: var(--elements-color);
+        color: var(--text-color);
+        box-shadow: var(--shadow-secondary);
+    }
+
+    &__icon {
+        font-size: rem(20);
+        transition: all ease 0.5s;
+
+        &--active {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__list {
+        position: absolute;
+        width: 100%;
+        top: 110%;
+        right: 0;
+        z-index: 1;
+
+        border-radius: rem(8);
+        padding: rem(16) rem(32);
+        opacity: 0;
+        transform-origin: top;
+        transform: scaleY(0);
+        transition: all ease 0.5s;
+
+        &--active {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+    }
+
+    &__item {
+        text-align: start;
+        padding: rem(8);
+        transition: all ease 0.5s;
+
+        &:hover,
+        &--active {
+            color: var(--hover-effect-color);
+            margin-left: rem(5);
+        }
+    }
+}
