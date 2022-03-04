@@ -1,0 +1,84 @@
+@use '../util' as *;
+
+.modal {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    z-index: 10;
+    visibility: hidden;
+    transition: all ease-in-out 0.9s;
+    transform: translateX(rem(-1500));
+
+    &--active {
+        visibility: visible;
+        transform: translateX(rem(1000));
+
+        transform: scaleX(1);
+    }
+
+    &__overlay {
+        padding: rem(16) 0;
+    }
+
+    &--btn {
+        font-family: inherit;
+        font-weight: 600;
+        border: none;
+
+        color: var(--text-color);
+        background-color: var(--elements-color);
+        padding: rem(8) rem(16);
+        border-radius: rem(4);
+        box-shadow: var(--shadow-btn);
+        cursor: pointer;
+    }
+
+    &__back {
+        @include flex(initial);
+        align-items: center;
+        gap: rem(8);
+        margin-bottom: rem(16);
+
+        &-icon {
+            font-size: rem(18);
+        }
+    }
+
+    &__container {
+        display: grid;
+        gap: rem(16);
+    }
+
+    &__flag {
+        width: 100%;
+        max-height: rem(220);
+        object-fit: cover;
+    }
+
+    &__name {
+        margin-bottom: rem(16);
+    }
+
+    &__info {
+        @include flex(space-between);
+        flex-direction: column;
+        gap: rem(16);
+    }
+
+    &__item {
+        & span {
+            font-weight: 600;
+        }
+    }
+
+    &__border {
+        margin-top: rem(16);
+
+        &-name {
+            font-size: rem(16);
+        }
+    }
+}

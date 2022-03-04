@@ -2,5 +2,13 @@
 
 .container {
     width: 90vw;
-    max-width: rem(1100);
+    max-width: rem(1200);
+    margin: 0 auto;
+}
+
+.countries {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: rem(32);
+    justify-items: center;
 }

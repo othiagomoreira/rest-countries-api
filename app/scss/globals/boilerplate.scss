@@ -13,4 +13,29 @@ html {
 
 body {
     font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    transition: background 0.3s linear, color 0.3s linear;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+img {
+    display: block;
+}
+
+.btn {
+    background-color: var(--elements-color);
+    color: var(--text-color);
+    font-weight: 600;
+    border-radius: rem(4);
+    box-shadow: var(--shadow-btn);
+    transition: all ease 0.5s;
+    cursor: pointer;
+
+    &:hover {
+        color: var(--hover-effect-color);
+    }
 }
