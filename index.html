@@ -5,6 +5,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
 
 	<!-- Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,14 +15,66 @@
 	<!-- Css Stylesheet -->
 	<link rel="stylesheet" href="./dist/style.css" />
 
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
 	<!-- JavaScript -->
-	<script defer src="./app/js/script.js"></script>
+	<script type="module" src="./app/js/script.js"></script>
 
 	<title>Rest Countries API | Frontend Mentor</title>
 </head>
 
 <body>
+	<header class="header">
+		<nav class="nav-menu container">
+			<h1 class="nav-menu__title">
+				<a href="#">Where in the world?</a>
+			</h1>
 
+			<button class="nav-menu__theme" id="btn-theme">
+				<i class='bx bxs-moon'></i>
+				<span>Dark Mode</span>
+			</button>
+		</nav>
+	</header>
+
+	<main class="main container">
+		<div class="search">
+			<div class="form">
+				<input class="form__input" type="search" placeholder="Search for a country..." id="search-countries">
+				<i class='bx bx-search-alt-2 form__icon'></i>
+			</div>
+
+			<button class="dropdown" aria-haspopup="listbox" id="btn-dropdown">
+				Filter by Region
+				<i class="bx bx-chevron-down dropdown__icon"></i>
+
+				<ul class="dropdown__list" role="listbox" id="dropdown">
+					<li class="dropdown__item">All</li>
+					<li class="dropdown__item">Africa</li>
+					<li class="dropdown__item">America</li>
+					<li class="dropdown__item">Asia</li>
+					<li class="dropdown__item">Europe</li>
+					<li class="dropdown__item">Oceania</li>
+				</ul>
+			</button>
+		</div>
+
+		<!-- ---COUNTRIES CARD--- -->
+		<section class="countries"></section>
+	</main>
+
+	<!-- ---MODAL--- -->
+	<div class="modal" id="modal">
+		<div class="container modal__overlay">
+			<button class="modal__back modal--btn" id="btn-modal">
+				<i class='bx bx-arrow-back modal__back-icon'></i>
+				Back
+			</button>
+
+			<div class="modal__container"></div>
+		</div>
+	</div>
 </body>
 
 </html>
