@@ -3,24 +3,29 @@
 .modal {
     position: fixed;
     top: 0;
+    bottom: 0;
     width: 100%;
-    min-height: 100vh;
     background-color: var(--bg-color);
     color: var(--text-color);
     z-index: 10;
     visibility: hidden;
-    transition: all ease-in-out 0.9s;
-    transform: translateX(rem(-1500));
+    transform: translateX(-100%);
+    transition: all ease 0.5s;
+    overflow-y: scroll;
+
+    @include breakpoint(medium) {
+        opacity: 0;
+        transform: none;
+    }
 
     &--active {
         visibility: visible;
-        transform: translateX(rem(1000));
+        transform: translateX(0);
 
-        transform: scaleX(1);
-    }
-
-    &__overlay {
-        padding: rem(16) 0;
+        @include breakpoint(medium) {
+            opacity: 1;
+            transform: none;
+        }
     }
 
     &--btn {
@@ -30,17 +35,21 @@
 
         color: var(--text-color);
         background-color: var(--elements-color);
-        padding: rem(8) rem(16);
+        padding: rem(8) rem(24);
         border-radius: rem(4);
         box-shadow: var(--shadow-btn);
         cursor: pointer;
+    }
+
+    &__overlay {
+        padding: rem(32) 0;
     }
 
     &__back {
         @include flex(initial);
         align-items: center;
         gap: rem(8);
-        margin-bottom: rem(16);
+        margin-bottom: rem(48);
 
         &-icon {
             font-size: rem(18);
@@ -49,12 +58,17 @@
 
     &__container {
         display: grid;
-        gap: rem(16);
+        gap: rem(32);
+
+        @include breakpoint(large) {
+            grid-template-columns: repeat(2, minmax(rem(450), rem(550)));
+            justify-content: space-between;
+        }
     }
 
     &__flag {
         width: 100%;
-        max-height: rem(220);
+        max-height: rem(330);
         object-fit: cover;
     }
 
@@ -63,9 +77,19 @@
     }
 
     &__info {
-        @include flex(space-between);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(230), 1fr));
+        gap: rem(40);
+
+        @include breakpoint(large) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__list {
+        @include flex(initial);
         flex-direction: column;
-        gap: rem(16);
+        gap: rem(8);
     }
 
     &__item {
@@ -75,10 +99,10 @@
     }
 
     &__border {
-        margin-top: rem(16);
+        margin-top: rem(48);
 
         &-name {
-            font-size: rem(16);
+            font-size: rem(20);
         }
     }
 }

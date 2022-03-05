@@ -3,8 +3,6 @@ export const showCountryInfo = (info) => {
     const btnModal = document.querySelector('#btn-modal');
     const element = document.querySelector('.modal__container');
 
-    console.log(info);
-
     element.innerHTML = `
 		<img class="modal__flag" src="${info.flag}" alt="Flag ${info.name}">
 
@@ -12,7 +10,7 @@ export const showCountryInfo = (info) => {
 			<h2 class="modal__name">${info.name}</h2>
 
 			<div class="modal__info">
-				<ul class="country__list">
+				<ul class="modal__list">
 					<li class="modal__item">
 						<span>Native Name:</span>
 						${info.nativeName}
@@ -35,7 +33,7 @@ export const showCountryInfo = (info) => {
 					</li>
 				</ul>
 
-				<ul class="country__list">
+				<ul class="modal__list">
 					<li class="modal__item">
 						<span>Top Level Domain:</span>
 						${info.topDomain}
