@@ -1,0 +1,37 @@
+@use '../util' as *;
+
+.btn-scroll {
+    position: fixed;
+    bottom: rem(20);
+    right: rem(16);
+    width: rem(30);
+    height: rem(30);
+
+    background-color: var(--btn-scroll-top);
+    clip-path: circle();
+    border: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    cursor: pointer;
+    transition: all ease 0.5s;
+
+    &:hover {
+        background-color: var(--hover-effect-color);
+    }
+
+    &--active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    &__link {
+        display: inline-block;
+
+        & i {
+            font-size: rem(24);
+            color: whitesmoke;
+        }
+    }
+}

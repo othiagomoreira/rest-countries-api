@@ -9,6 +9,7 @@
     --shadow-btn: 0 2px 7px rgb(133, 133, 133, 0.5);
 
     --hover-effect-color: hsl(0, 0%, 60%);
+    --btn-scroll-top: hsl(0, 0%, 79%);
 }
 
 body.dark-theme {
@@ -20,4 +21,5 @@ body.dark-theme {
     --shadow-primary: 0px 1px 8px 0px rgb(0, 0, 0, 0.1);
     --shadow-secondary: 0px 1px 15px 0px rgb(0, 0, 0, 0.1);
     --shadow-btn: 0px 1px 15px 0px rgb(0, 0, 0, 0.3);
+    --btn-scroll-top: hsl(0, 0%, 70%);
 }
