@@ -40,7 +40,7 @@ export const showCountryInfo = (info) => {
 					</li>
 					<li class="modal__item">
 						<span>Currencies</span>:</span>
-
+						${info.currency}
 					</li>
 					<li class="modal__item">
 						<span>Languages:</span>

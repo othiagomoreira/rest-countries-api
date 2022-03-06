@@ -8,6 +8,12 @@ export function displayCountryCard(countries) {
         const countryEl = document.createElement('div');
         countryEl.classList.add('card');
 
+        const checkCurrency = (arrayCurrencies) => {
+            return typeof arrayCurrencies === 'object'
+                ? arrayCurrencies.map((currency) => currency.name)
+                : 'Not found';
+        };
+
         const info = {
             flag: country.flag,
             name: country.name,
@@ -18,6 +24,7 @@ export function displayCountryCard(countries) {
             population: country.population.toLocaleString('en-US'),
             topDomain: country.topLevelDomain[0],
             language: country.languages.map((language) => language.name),
+            currency: checkCurrency(country.currencies),
         };
 
         countryEl.innerHTML = `
