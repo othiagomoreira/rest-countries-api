@@ -1,3 +1,5 @@
+import { generateBorders } from './borders.js';
+
 export const showCountryInfo = (info) => {
     const modal = document.querySelector('#modal');
     const btnModal = document.querySelector('#btn-modal');
@@ -52,9 +54,16 @@ export const showCountryInfo = (info) => {
 
 			<div class="modal__border">
 				<h3 class="modal__border-name">Border Countries:</h3>
+
+				<ul class="modal__border-list"></ul>
 			</div>
+
 		</section>
+
+		<iframe class="modal__iframe" src="https://www.google.com/maps?q=${info.lat},${info.lng}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
 	`;
+
+    generateBorders(info);
 
     const closeModal = () => modal.classList.remove('modal--active');
 

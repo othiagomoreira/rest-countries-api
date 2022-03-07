@@ -39,6 +39,11 @@
         border-radius: rem(4);
         box-shadow: var(--shadow-btn);
         cursor: pointer;
+        transition: all ease 0.3s;
+
+        &:hover {
+            box-shadow: none;
+        }
     }
 
     &__overlay {
@@ -100,9 +105,27 @@
 
     &__border {
         margin-top: rem(48);
+        @include flex(initial);
+        flex-direction: column;
+        gap: rem(16);
 
         &-name {
             font-size: rem(20);
         }
+
+        &-list {
+            @include flex(initial);
+            flex-wrap: wrap;
+            gap: rem(8);
+        }
+
+        &-btn {
+            padding: rem(8) rem(32);
+        }
+    }
+
+    &__iframe {
+        width: 100%;
+        height: rem(280);
     }
 }
