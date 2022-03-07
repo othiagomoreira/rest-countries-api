@@ -8,9 +8,7 @@ if (btnSwitchTheme) {
         const darkThemeSelected =
             darkTheme !== null && darkTheme === 'dark-theme';
 
-        if (darkThemeSelected === true) {
-            body.classList.add('dark-theme');
-        }
+        if (darkThemeSelected === true) body.classList.add('dark-theme');
     };
 
     const resetTheme = () => {
@@ -21,6 +19,23 @@ if (btnSwitchTheme) {
             : localStorage.removeItem('theme');
     };
 
+    const changeVisualInfo = () => {
+        const text = btnSwitchTheme.querySelector('span');
+        const icon = btnSwitchTheme.querySelector('i');
+
+        if (body.classList.contains('dark-theme')) {
+            icon.className = 'bx bxs-sun';
+            text.innerText = 'Light Mode';
+        } else {
+            icon.className = 'bx bxs-moon';
+            text.innerText = 'Dark Mode';
+        }
+    };
+
     initTheme();
-    btnSwitchTheme.addEventListener('click', resetTheme);
+
+    btnSwitchTheme.addEventListener('click', () => {
+        resetTheme();
+        changeVisualInfo();
+    });
 }
