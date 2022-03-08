@@ -1,6 +1,6 @@
 import { showCountryInfo } from './modal.js';
 
-export function displayCountryCard(country, allCountries) {
+export function displayCountryCard(country) {
     const container = document.querySelector('.countries');
     const modal = document.querySelector('#modal');
     const countryEl = document.createElement('div');
@@ -33,6 +33,6 @@ export function displayCountryCard(country, allCountries) {
 
     countryEl.addEventListener('click', () => {
         modal.classList.add('modal--active');
-        showCountryInfo(country, allCountries);
+        showCountryInfo(country);
     });
 }

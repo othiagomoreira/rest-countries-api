@@ -1,7 +1,7 @@
 import { generateBorders } from './borders.js';
 import { checkCurrency, checkLat, checkLng } from './utilities.js';
 
-export const showCountryInfo = (country, allCountries) => {
+export const showCountryInfo = (country) => {
     const modal = document.querySelector('#modal');
     const btnModal = document.querySelector('#btn-modal');
     const element = document.querySelector('.modal__container');
@@ -62,10 +62,12 @@ export const showCountryInfo = (country, allCountries) => {
 		</section>
 
 		<iframe class="modal__iframe" 
-			src="https://www.google.com/maps?q=${checkLat(country.latlng)},${checkLng(country.latlng)}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0">
+			src="https://www.google.com/maps?q=${checkLat(country.latlng)},${checkLng(
+        country.latlng
+    )}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0">
 		</iframe>`;
 
-    generateBorders(country, allCountries);
+    generateBorders(country);
 
     const closeModal = () => modal.classList.remove('modal--active');
 

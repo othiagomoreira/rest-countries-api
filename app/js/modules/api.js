@@ -5,7 +5,7 @@ export async function getInfoCountries() {
     const countries = await res.json();
 
     countries.forEach((country) => {
-        displayCountryCard(country, countries);
+        displayCountryCard(country);
     });
 }
 

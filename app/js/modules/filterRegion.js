@@ -1,10 +1,11 @@
 const btnDropdown = document.querySelector('#btn-dropdown');
-const icon = document.querySelector('.dropdown__icon');
-const dropdown = btnDropdown.querySelector('#dropdown');
 const regions = dropdown.querySelectorAll('.dropdown__item');
 
 // Open and Close Dropdown
 const openDropdownMenu = () => {
+    const dropdown = btnDropdown.querySelector('#dropdown');
+    const icon = document.querySelector('.dropdown__icon');
+
     dropdown.classList.toggle('dropdown__list--active');
     icon.classList.toggle('dropdown__icon--active');
 };

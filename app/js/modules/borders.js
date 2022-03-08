@@ -1,8 +1,17 @@
 import { showCountryInfo } from './modal.js';
 
-export const generateBorders = (info, allCountries) => {
+export const generateBorders = (country) => {
     const list = document.querySelector('.modal__border-list');
     const borderContainer = document.querySelector('.modal__border');
+
+    async function getSelectedBorderArray(countryCode) {
+        const res = await fetch(
+            `https://restcountries.com/v2/alpha/${countryCode}`
+        );
+        const code = await res.json();
+
+        showCountryInfo(code);
+    }
 
     const borderCountry = (borders) => {
         borders.forEach((border) => {
@@ -14,22 +23,14 @@ export const generateBorders = (info, allCountries) => {
             list.append(elementLi);
 
             elementLi.addEventListener('click', () => {
-                const selectedCountryName = elementLi.innerText;
-                
-                allCountries.forEach((country) => {
-                    const selectedCountry = country.alpha3Code === selectedCountryName;
-
-                    if(selectedCountry === true) {
-                        showCountryInfo(country);
-                    }
-                });
+                getSelectedBorderArray(border);
             });
         });
     };
 
     const borderlessCountry = () => (borderContainer.style.display = 'none');
 
-    typeof info.borders === 'object'
-        ? borderCountry(info.borders)
+    typeof country.borders === 'object'
+        ? borderCountry(country.borders)
         : borderlessCountry();
 };
