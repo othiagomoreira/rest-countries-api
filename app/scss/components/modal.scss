@@ -42,7 +42,7 @@
         transition: all ease 0.3s;
 
         &:hover {
-            box-shadow: none;
+            background-color: var(--btn-hover);
         }
     }
 
