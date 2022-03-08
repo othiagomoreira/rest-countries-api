@@ -1,4 +1,6 @@
-export const generateBorders = (info) => {
+import { showCountryInfo } from './modal.js';
+
+export const generateBorders = (info, allCountries) => {
     const list = document.querySelector('.modal__border-list');
     const borderContainer = document.querySelector('.modal__border');
 
@@ -12,9 +14,15 @@ export const generateBorders = (info) => {
             list.append(elementLi);
 
             elementLi.addEventListener('click', () => {
-                const value = elementLi.innerText;
+                const selectedCountryName = elementLi.innerText;
+                
+                allCountries.forEach((country) => {
+                    const selectedCountry = country.alpha3Code === selectedCountryName;
 
-                console.log(value);
+                    if(selectedCountry === true) {
+                        showCountryInfo(country);
+                    }
+                });
             });
         });
     };

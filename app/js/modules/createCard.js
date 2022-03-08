@@ -1,27 +1,30 @@
 import { showCountryInfo } from './modal.js';
 
-export function displayCountryCard(info) {
+export function displayCountryCard(country, allCountries) {
     const container = document.querySelector('.countries');
     const modal = document.querySelector('#modal');
     const countryEl = document.createElement('div');
 
-    countryEl.classList.add('card', info.alphaCode);
+    countryEl.classList.add('card');
 
     countryEl.innerHTML = `
-        <img class="card__img" src="${info.flag}" alt="${info.name} flag">
+        <img class="card__img" src="${country.flag}" alt="${country.name} flag">
         
         <div class="card__content">
-            <h2 class="card__name">${info.name}</h2>
+            <h2 class="card__name">${country.name}</h2>
 
             <ul class="card__list">
                 <li class="card__item">
-                    <span>Population:</span> ${info.population}
+                    <span>Population:</span> 
+                    ${country.population.toLocaleString('en-US')}
                 </li>
                 <li class="card__item card__region">
-                    <span>Region:</span> ${info.region}
+                    <span>Region:</span>
+                    ${country.region}
                 </li>
                 <li class="card__item card__capital">
-                    <span>Capital:</span> ${info.capital}
+                    <span>Capital:</span>
+                    ${country.capital}
                 </li>
             </ul>
         </div>`;
@@ -30,6 +33,6 @@ export function displayCountryCard(info) {
 
     countryEl.addEventListener('click', () => {
         modal.classList.add('modal--active');
-        showCountryInfo(info);
+        showCountryInfo(country, allCountries);
     });
 }

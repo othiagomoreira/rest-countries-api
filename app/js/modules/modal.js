@@ -1,52 +1,53 @@
 import { generateBorders } from './borders.js';
+import { checkCurrency, checkLat, checkLng } from './utilities.js';
 
-export const showCountryInfo = (info) => {
+export const showCountryInfo = (country, allCountries) => {
     const modal = document.querySelector('#modal');
     const btnModal = document.querySelector('#btn-modal');
     const element = document.querySelector('.modal__container');
 
     element.innerHTML = `
-		<img class="modal__flag" src="${info.flag}" alt="Flag ${info.name}">
+		<img class="modal__flag" src="${country.flag}" alt="Flag ${country.name}">
 
 		<section class="modal__content">
-			<h2 class="modal__name">${info.name}</h2>
+			<h2 class="modal__name">${country.name}</h2>
 
 			<div class="modal__info">
 				<ul class="modal__list">
 					<li class="modal__item">
 						<span>Native Name:</span>
-						${info.nativeName}
+						${country.nativeName}
 					</li>
 					<li class="modal__item">
 						<span>Population:</span>
-						${info.population}
+						${country.population.toLocaleString('en-US')}
 					</li>
 					<li class="modal__item">
 						<span>Region:</span>
-						${info.region}
+						${country.region}
 					</li>
 					<li class="modal__item">
 						<span>Sub Region:</span>
-						${info.subRegion}
+						${country.subregion}
 					</li>
 					<li class="modal__item">
 						<span>Capital:</span>
-						${info.capital}
+						${country.capital}
 					</li>
 				</ul>
 
 				<ul class="modal__list">
 					<li class="modal__item">
 						<span>Top Level Domain:</span>
-						${info.topDomain}
+						${country.topLevelDomain[0]}
 					</li>
 					<li class="modal__item">
 						<span>Currencies</span>:</span>
-						${info.currency}
+						${checkCurrency(country.currencies)}
 					</li>
 					<li class="modal__item">
 						<span>Languages:</span>
-						${info.language}
+						${country.languages.map((language) => language.name)}
 					</li>
 				</ul>
 			</div>
@@ -60,10 +61,11 @@ export const showCountryInfo = (info) => {
 
 		</section>
 
-		<iframe class="modal__iframe" src="https://www.google.com/maps?q=${info.lat},${info.lng}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0"></iframe>
-	`;
+		<iframe class="modal__iframe" 
+			src="https://www.google.com/maps?q=${checkLat(country.latlng)},${checkLng(country.latlng)}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0">
+		</iframe>`;
 
-    generateBorders(info);
+    generateBorders(country, allCountries);
 
     const closeModal = () => modal.classList.remove('modal--active');
 
