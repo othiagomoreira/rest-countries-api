@@ -6,48 +6,65 @@ export const showCountryInfo = (country) => {
     const btnModal = document.querySelector('#btn-modal');
     const element = document.querySelector('.modal__container');
 
+    const info = {
+        flag: country.flag,
+        name: country.name,
+        capital: country.capital,
+        nativeName: country.nativeName,
+        region: country.region,
+        subRegion: country.subregion,
+        population: country.population.toLocaleString('en-US'),
+        topDomain: country.topLevelDomain[0],
+        language: country.languages.map((language) => language.name),
+        currency: checkCurrency(country.currencies),
+        borders: country.borders,
+        alphaCode: country.alpha3Code,
+        lat: checkLat(country.latlng),
+        lng: checkLng(country.latlng),
+    };
+
     element.innerHTML = `
-		<img class="modal__flag" src="${country.flag}" alt="Flag ${country.name}">
+		<img class="modal__flag" src="${info.flag}" alt="Flag ${info.name}">
 
 		<section class="modal__content">
-			<h2 class="modal__name">${country.name}</h2>
+			<h2 class="modal__name">${info.name}</h2>
 
 			<div class="modal__info">
 				<ul class="modal__list">
 					<li class="modal__item">
 						<span>Native Name:</span>
-						${country.nativeName}
+						${info.nativeName}
 					</li>
 					<li class="modal__item">
 						<span>Population:</span>
-						${country.population.toLocaleString('en-US')}
+						${info.population}
 					</li>
 					<li class="modal__item">
 						<span>Region:</span>
-						${country.region}
+						${info.region}
 					</li>
 					<li class="modal__item">
 						<span>Sub Region:</span>
-						${country.subregion}
+						${info.subRegion}
 					</li>
 					<li class="modal__item">
 						<span>Capital:</span>
-						${country.capital}
+						${info.capital}
 					</li>
 				</ul>
 
 				<ul class="modal__list">
 					<li class="modal__item">
 						<span>Top Level Domain:</span>
-						${country.topLevelDomain[0]}
+						${info.topDomain}
 					</li>
 					<li class="modal__item">
 						<span>Currencies</span>:</span>
-						${checkCurrency(country.currencies)}
+						${info.currency}
 					</li>
 					<li class="modal__item">
 						<span>Languages:</span>
-						${country.languages.map((language) => language.name)}
+						${info.language}
 					</li>
 				</ul>
 			</div>
@@ -62,14 +79,25 @@ export const showCountryInfo = (country) => {
 		</section>
 
 		<iframe class="modal__iframe" 
-			src="https://www.google.com/maps?q=${checkLat(country.latlng)},${checkLng(
-        country.latlng
-    )}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0">
+			src="https://www.google.com/maps?q=${info.lat},${info.lng}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0">
 		</iframe>`;
 
     generateBorders(country);
 
-    const closeModal = () => modal.classList.remove('modal--active');
+    const changeTitleAndFavicon = (favicon, pageTitle) => {
+        const icon = document.querySelector('#favicon');
+        const title = document.querySelector('#page-title');
+
+        icon.setAttribute('href', favicon);
+        title.innerText = pageTitle;
+    };
+
+    changeTitleAndFavicon(info.flag, info.name);
+
+    const closeModal = () => {
+        modal.classList.remove('modal--active');
+        changeTitleAndFavicon('./assets/favicon.png', 'Rest Countries API');
+    };
 
     btnModal.addEventListener('click', closeModal);
 };

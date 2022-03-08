@@ -9,13 +9,14 @@
     @include flex(space-between);
     padding: rem(20) 0;
 
-    &__title {
+    &__link {
         font-size: rem(16);
         color: var(--text-color);
 
         @include breakpoint(medium) {
             font-size: rem(24);
         }
+        
     }
 
     &__theme {
