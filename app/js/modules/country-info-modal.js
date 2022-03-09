@@ -82,7 +82,7 @@ export const showCountryInfo = (country) => {
 			src="https://www.google.com/maps?q=${info.lat},${info.lng}&z=5&ie=UTF8&iwloc=&output=embed" frameborder="0">
 		</iframe>`;
 
-    generateBorders(country);
+    generateBorders(country, modal);
 
     const changeTitleAndFavicon = (favicon, pageTitle) => {
         const icon = document.querySelector('#favicon');

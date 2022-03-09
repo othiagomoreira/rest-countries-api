@@ -1,13 +1,15 @@
 import { showCountryInfo } from './country-info-modal.js';
 
 async function getInfoSelectedBorder(countryCode) {
-    const res = await fetch(`https://restcountries.com/v2/alpha/${countryCode}`);
+    const res = await fetch(
+        `https://restcountries.com/v2/alpha/${countryCode}`
+    );
     const countryInfo = await res.json();
 
     showCountryInfo(countryInfo);
 }
 
-export const generateBorders = (country) => {
+export const generateBorders = (country, modal) => {
     const list = document.querySelector('.modal__border-list');
     const borderContainer = document.querySelector('.modal__border');
 
@@ -22,6 +24,11 @@ export const generateBorders = (country) => {
 
             elementLi.addEventListener('click', () => {
                 getInfoSelectedBorder(border);
+
+                modal.scrollTo({
+                    top: 0,
+                    behavior: 'smooth',
+                });
             });
         });
     };

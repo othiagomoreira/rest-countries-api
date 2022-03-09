@@ -1,0 +1,20 @@
+@use '../util' as *;
+
+.not-found {
+    background: url(../assets/country-not-found.svg) no-repeat;
+    background-position: center;
+    background-size: contain;
+    transform: scale(0);
+    opacity: 0;
+    transition: all ease 1s;
+
+    &--active {
+        height: rem(250);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    @include breakpoint(medium) {
+        height: rem(300);
+    }
+}

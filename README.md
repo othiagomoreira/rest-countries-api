@@ -1,5 +1,5 @@
 <h1 align="center">
-  ❤  <a href="#">Rest Countries API</a>
+  e  <a href="#">Rest Countries API</a>
 </h1>
 
 <h3 align="center"> 
@@ -12,12 +12,12 @@
     <img alt="made by Thiago Moreira" src="https://img.shields.io/badge/made%20by-othiagomoreira-%237319C1">
   </a>
 
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/othiagomoreira/social-proof-section?color=%2300FFFF">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/othiagomoreira/rest-countries-api?color=%2300FFFF">
 
-  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/othiagomoreira/social-proof-section?style=plastic">
+  <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/othiagomoreira/rest-countries-api?style=plastic">
 
-  <a href="https://github.com/othiagomoreira/README/commits/main">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/othiagomoreira/social-proof-section">
+  <a href="https://github.com/othiagomoreira/rest-countries-api/commits/main">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/othiagomoreira/rest-countries-api">
   </a>
     
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
@@ -38,7 +38,7 @@
 
 ## 📃 About
 
--   ...
+-   
 
 ---
 
