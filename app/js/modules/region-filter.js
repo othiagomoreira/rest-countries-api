@@ -12,8 +12,22 @@ const openDropdownMenu = () => {
 
 btnDropdown.addEventListener('click', openDropdownMenu);
 
-// Adds a visual effect to the drop-down menu, letting you know which country was selected
-const visualEffect = (region) => {
+// Filter countries by their continents
+const regionFilter = (element) => {
+    const value = element.innerText;
+    const allContinents = document.querySelectorAll('.card__region');
+
+    allContinents.forEach((continent) => {
+        const continentName = continent.innerText;
+
+        continentName.includes(value) || value === 'All'
+            ? (continent.closest('.card').style.display = 'block')
+            : (continent.closest('.card').style.display = 'none');
+    });
+};
+
+// Add a visual effect to the selected region
+const highlightSelectedRegion = (region) => {
     regions.forEach((region) =>
         region.classList.remove('dropdown__item--active')
     );
@@ -21,23 +35,9 @@ const visualEffect = (region) => {
     region.classList.add('dropdown__item--active');
 };
 
-// Filter countries by their continents
-const selectedCountry = (continent) => {
-    const value = continent.innerText;
-    const allRegionNames = document.querySelectorAll('.card__region');
-
-    allRegionNames.forEach((regionName) => {
-        const region = regionName.innerText;
-
-        region.includes(value) || value === 'All'
-            ? (regionName.closest('.card').style.display = 'block')
-            : (regionName.closest('.card').style.display = 'none');
-    });
-};
-
 regions.forEach((region) => {
     region.addEventListener('click', () => {
-        visualEffect(region);
-        selectedCountry(region);
+        regionFilter(region);
+        highlightSelectedRegion(region);
     });
 });

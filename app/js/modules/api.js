@@ -1,4 +1,4 @@
-import { displayCountryCard } from './createCard.js';
+import { displayCountryCard } from './create-card.js';
 
 export async function getInfoCountries() {
     const res = await fetch('https://restcountries.com/v2/all');

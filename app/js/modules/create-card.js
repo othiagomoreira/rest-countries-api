@@ -1,4 +1,4 @@
-import { showCountryInfo } from './modal.js';
+import { showCountryInfo } from './country-info-modal.js';
 
 export function displayCountryCard(country) {
     const container = document.querySelector('.countries');

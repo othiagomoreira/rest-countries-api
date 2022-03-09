@@ -1,10 +1,10 @@
-import { showCountryInfo } from './modal.js';
+import { showCountryInfo } from './country-info-modal.js';
 
-async function getSelectedBorderArray(countryCode) {
+async function getInfoSelectedBorder(countryCode) {
     const res = await fetch(`https://restcountries.com/v2/alpha/${countryCode}`);
-    const code = await res.json();
+    const countryInfo = await res.json();
 
-    showCountryInfo(code);
+    showCountryInfo(countryInfo);
 }
 
 export const generateBorders = (country) => {
@@ -21,7 +21,7 @@ export const generateBorders = (country) => {
             list.append(elementLi);
 
             elementLi.addEventListener('click', () => {
-                getSelectedBorderArray(border);
+                getInfoSelectedBorder(border);
             });
         });
     };
