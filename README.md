@@ -1,5 +1,5 @@
 <h1 align="center">
-  e  <a href="#">Rest Countries API</a>
+  🇧🇷 <a href="#">Rest Countries API</a>
 </h1>
 
 <h3 align="center"> 
@@ -47,17 +47,13 @@
 ### 📱 Mobile
 
 <p align="center">
-  <img alt="" title="#" src="" width="200px">
-
-  <img alt="" title="#" src="" width="200px">
+	<video src="assets/demo-mobile.mp4" preload="auto" controls></video>
 </p>
 
 ### 💻 Web
 
-<p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="" title="#" src="" width="400px">
-
-  <img alt="" title="#" src="" width="400px">
+<p align="center" style="display: flex; align-items: center; justify-content: center;">
+	<video src="assets/demo-desktop.mp4" preload="auto" controls></video>
 </p>
 
 ---
@@ -66,9 +62,12 @@
 
 The following tools were used in the construction of the project:
 
--   Icons:  **[Feather Icons](https://feathericons.com/)**
--   Fonts:  **[Ubuntu](https://fonts.google.com/specimen/Ubuntu)**,  **[Roboto](https://fonts.google.com/specimen/Roboto)**
----
+-   Javascript
+-   Sass/Scss
+-   API:  **[Rest Countries](https://restcountries.com/)**
+-   Workflow automation: **[Gulp](https://gulpjs.com/)**
+-   Font Family:  **[Nunito Sans](https://fonts.google.com/specimen/Nunito+Sans)**
+-   Icons:  **[Boxicons](https://boxicons.com/)**
 
 ## 😎 Author
 

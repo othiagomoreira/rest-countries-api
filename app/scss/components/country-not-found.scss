@@ -12,9 +12,9 @@
         height: rem(250);
         transform: scale(1);
         opacity: 1;
-    }
 
-    @include breakpoint(medium) {
-        height: rem(300);
+        @include breakpoint(medium) {
+            height: rem(300);
+        }
     }
 }
