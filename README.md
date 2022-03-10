@@ -38,17 +38,21 @@
 
 ## 📃 About
 
--   
+-   🇧🇷🇦🇷🇩🇪 Consumption of an API that contains diverse information about all countries in the world
+-   🌓 Dark and Light theme switcher using **[localstorage](https://codyhouse.co/blog/post/store-theme-color-preferences-with-localstorage)** to save theme preference
+-   🌍 Filter countries by their continents
+-   🔍 Search for the desired country name through the search field
+-   🧭 Navigation by neighboring countries
+-   🗺 Geolocation iframe
+-   🔝 Scroll up button, in case you're too lazy to scroll everything manually 😂
+-   ❌ Illustration if the country entered does not exist
+-   ✅ Favicon and dynamic page title
 
 ---
 
-## 🎨 Layout
+## 🎨 Demo
 
-### 📱 Mobile
-
-<p align="center">
   ![Demo](assets/demo.gif)
-</p>
 
 ---
 
