@@ -47,7 +47,7 @@
 ### 📱 Mobile
 
 <p align="center">
-	<video src="assets/demo-mobile.mp4" preload="auto" controls></video>
+	<video src="assets/demo-mobile.mp4" preload="auto" controls width="100%"></video>
 </p>
 
 ### 💻 Web
