@@ -47,13 +47,7 @@
 ### 📱 Mobile
 
 <p align="center">
-	<video src="assets/demo-mobile.mp4" preload="auto" controls width="400px"></video>
-</p>
-
-### 💻 Web
-
-<p align="center" style="display: flex; align-items: center; justify-content: center;">
-	<video src="assets/demo-desktop.mp4" preload="auto" controls></video>
+  ![Demo](assets/demo.gif)
 </p>
 
 ---
